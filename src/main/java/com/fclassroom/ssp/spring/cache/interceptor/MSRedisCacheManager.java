@@ -1,7 +1,7 @@
 package com.fclassroom.ssp.spring.cache.interceptor;
 
 import com.fclassroom.ssp.spring.cache.MSCache;
-import com.fclassroom.ssp.spring.cache.MSMSCache;
+import com.fclassroom.ssp.spring.cache.MSRedisCache;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.cache.Cache;
@@ -226,9 +226,9 @@ public class MSRedisCacheManager extends AbstractTransactionSupportingMSCacheMan
     }
 
     @SuppressWarnings("unchecked")
-    protected MSMSCache createCache(String cacheName) {
+    protected MSRedisCache createCache(String cacheName) {
         long expiration = computeExpiration(cacheName);
-        return new MSMSCache(cacheName, (usePrefix ? cachePrefix.prefix(cacheName) : null), redisOperations, expiration,
+        return new MSRedisCache(cacheName, (usePrefix ? cachePrefix.prefix(cacheName) : null), redisOperations, expiration,
                 cacheNullValues);
     }
 

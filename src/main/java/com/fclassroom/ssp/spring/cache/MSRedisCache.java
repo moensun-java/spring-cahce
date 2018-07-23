@@ -33,7 +33,7 @@ import java.util.concurrent.Callable;
  * Date: 2018/7/18
  * Time: 下午6:49
  */
-public class MSMSCache extends AbstractValueAdaptingMSCache {
+public class MSRedisCache extends AbstractValueAdaptingMSCache {
 
 
     @SuppressWarnings("rawtypes") //
@@ -49,8 +49,8 @@ public class MSMSCache extends AbstractValueAdaptingMSCache {
      * @param redisOperations
      * @param expiration
      */
-    public MSMSCache(String name, byte[] prefix, RedisOperations<? extends Object, ? extends Object> redisOperations,
-                     long expiration) {
+    public MSRedisCache(String name, byte[] prefix, RedisOperations<? extends Object, ? extends Object> redisOperations,
+                        long expiration) {
         this(name, prefix, redisOperations, expiration, false);
     }
 
@@ -64,8 +64,8 @@ public class MSMSCache extends AbstractValueAdaptingMSCache {
      * @param allowNullValues
      * @since 1.8
      */
-    public MSMSCache(String name, byte[] prefix, RedisOperations<? extends Object, ? extends Object> redisOperations,
-                     long expiration, boolean allowNullValues) {
+    public MSRedisCache(String name, byte[] prefix, RedisOperations<? extends Object, ? extends Object> redisOperations,
+                        long expiration, boolean allowNullValues) {
 
         super(allowNullValues);
 
