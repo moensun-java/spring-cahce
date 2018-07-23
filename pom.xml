@@ -10,14 +10,22 @@
 
 
     <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>http://repos.fclassroom.cn/nexus/content/repositories/releases/</url>
-        </repository>
+        <!--        <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>-->
         <snapshotRepository>
-            <id>snapshots</id>
-            <url>http://repos.fclassroom.cn/nexus/content/repositories/snapshots/</url>
+            <id>moensun</id>
+            <url>http://maven.unimker.tk:8082/repository/maven-snapshots/</url>
         </snapshotRepository>
+        <repository>
+            <id>moensun</id>
+            <url>http://maven.unimker.tk:8082/repository/maven-releases/</url>
+        </repository>
     </distributionManagement>
 
     <dependencies>
